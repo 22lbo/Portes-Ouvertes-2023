@@ -29,7 +29,7 @@ namespace SimpleDraw
             InitializeComponent();
 
             connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:7081/DrawingHub")
+                .WithUrl("http://localhost:5076/DrawingHub")
                 .WithAutomaticReconnect()
                 .Build();
 
