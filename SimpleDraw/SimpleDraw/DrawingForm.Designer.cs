@@ -81,7 +81,7 @@
             DrawingToolStrip.Items.AddRange(new ToolStripItem[] { LineTool, RectangleTool, EllipseTool, toolStripSeparator1, FgColorButton });
             DrawingToolStrip.Location = new Point(3, 0);
             DrawingToolStrip.Name = "DrawingToolStrip";
-            DrawingToolStrip.Size = new Size(141, 25);
+            DrawingToolStrip.Size = new Size(110, 25);
             DrawingToolStrip.TabIndex = 0;
             DrawingToolStrip.Text = "Drawing Tools";
             DrawingToolStrip.ItemClicked += DrawingToolStrip_ItemClicked;
