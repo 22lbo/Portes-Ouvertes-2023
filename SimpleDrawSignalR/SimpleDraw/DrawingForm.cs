@@ -37,6 +37,7 @@ namespace SimpleDraw
             if (connection != null)
             {
                 Debug.WriteLine("Connection successful");
+
                 connection.On<ShapeData>("ShapeAdded", (s) =>
                 {
                     AddShape(s);
@@ -55,13 +56,23 @@ namespace SimpleDraw
             else
                 Debug.WriteLine("Connection failed");
 
+
             // Add tools to list
             Tools.Add(LineTool);
             Tools.Add(RectangleTool);
             Tools.Add(EllipseTool);
             SelectTool(LineTool);
 
-            connection.StartAsync();
+            RetrieveShapes();
+        }
+
+        async void RetrieveShapes()
+        {
+            await connection.StartAsync();
+            var shapes = await connection.InvokeAsync<IEnumerable<ShapeData>>("RetrieveShapes");
+            foreach (var s in shapes)
+                AddShape(s);
+            DrawingPanel.Invalidate();
         }
 
         Shape AddShape(ShapeData s)
@@ -82,7 +93,7 @@ namespace SimpleDraw
                     return null;
             }
             shape.Data = s;
-            Shapes.Add(shape.Id, shape);
+            Shapes[shape.Id] = shape;
             return shape;
         }
 
@@ -135,6 +146,7 @@ namespace SimpleDraw
 
         private void DrawingPanel_Paint(object sender, PaintEventArgs e)
         {
+
             foreach (var s in Shapes)
             {
                 s.Value.Draw(e.Graphics);
@@ -149,6 +161,5 @@ namespace SimpleDraw
         {
             SelectTool(e.ClickedItem);
         }
-
     }
 }

@@ -1,4 +1,5 @@
 ﻿using DrawLib;
+using System.Security.Cryptography.Xml;
 
 namespace Draw_SignalR_Hub
 {
@@ -28,7 +29,5 @@ namespace Draw_SignalR_Hub
             }
             return true;
         }
-
-
     }
 }

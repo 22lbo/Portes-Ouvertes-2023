@@ -22,5 +22,10 @@ namespace Draw_SignalR_Hub
                 Clients.Others.SendAsync("ShapeUpdated", shape);
         }
 
+        public IEnumerable<ShapeData> RetrieveShapes()
+        {
+            return (IEnumerable<ShapeData>)Drawing.Shapes.Values;
+        }
+
     }
 }
