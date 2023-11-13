@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\Draw_SignalR_Hub.props" />
+</Project>

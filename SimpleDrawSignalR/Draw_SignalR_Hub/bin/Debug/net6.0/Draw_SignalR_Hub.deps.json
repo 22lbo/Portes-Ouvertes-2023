@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "Draw_SignalR_Hub/1.0.0": {
+        "dependencies": {
+          "DrawLib": "1.0.0"
+        },
+        "runtime": {
+          "Draw_SignalR_Hub.dll": {}
+        }
+      },
+      "DrawLib/1.0.0": {
+        "runtime": {
+          "DrawLib.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Draw_SignalR_Hub/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DrawLib/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

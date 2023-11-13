@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Draw_SignalR_Hub.props" />
+</Project>
