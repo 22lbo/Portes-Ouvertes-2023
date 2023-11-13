@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DrawLib;
+using Microsoft.VisualBasic.ApplicationServices;
 
 namespace SimpleDraw
 {
@@ -123,9 +124,10 @@ namespace SimpleDraw
                 SelectedShape.Y1 = SelectedShape.Y2 = e.Y;
                 SelectedShape.LineColor = FgColorButton.SelectedColor;
                 DrawingPanel.Invalidate();
-                var id = await connection.InvokeAsync<int>("AddShape", SelectedShape.Data);
-                SelectedShape.Id = id;
-                Shapes.Add(id, SelectedShape);
+                var addedShape = SelectedShape;
+                var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
+                addedShape.Id = id;
+                Shapes.Add(id, addedShape);
             }
         }
 

@@ -46,6 +46,7 @@
             // 
             // DrawingPanel
             // 
+            DrawingPanel.BackColor = Color.White;
             DrawingPanel.Dock = DockStyle.Fill;
             DrawingPanel.Location = new Point(0, 0);
             DrawingPanel.Name = "DrawingPanel";
