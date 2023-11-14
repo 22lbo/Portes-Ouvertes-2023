@@ -29,9 +29,10 @@ namespace SimpleDraw
         public DrawingForm()
         {
             InitializeComponent();
+            var ServerUrl = Properties.Settings.Default.ServerUrl;
 
             connection = new HubConnectionBuilder()
-                .WithUrl("http://localhost:5076/DrawingHub")
+                .WithUrl($"{ServerUrl}/DrawingHub")
                 .WithAutomaticReconnect()
                 .Build();
 

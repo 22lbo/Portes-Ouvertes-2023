@@ -10,3 +10,14 @@ C:\Users\cp-22lbo\Documents\PO-2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawL
 C:\Users\cp-22lbo\Documents\PO-2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\refint\DrawLib.dll
 C:\Users\cp-22lbo\Documents\PO-2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.pdb
 C:\Users\cp-22lbo\Documents\PO-2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\ref\DrawLib.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\bin\Debug\net6.0\DrawLib.deps.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\bin\Debug\net6.0\DrawLib.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\bin\Debug\net6.0\DrawLib.pdb
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.GeneratedMSBuildEditorConfig.editorconfig
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.AssemblyInfoInputs.cache
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.AssemblyInfo.cs
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.csproj.CoreCompileInputs.cache
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\refint\DrawLib.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.pdb
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\ref\DrawLib.dll

@@ -28,3 +28,33 @@ C:\Users\cp-22lbo\Documents\PO-2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_
 C:\Users\cp-22lbo\Documents\PO-2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.pdb
 C:\Users\cp-22lbo\Documents\PO-2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.genruntimeconfig.cache
 C:\Users\cp-22lbo\Documents\PO-2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\ref\Draw_SignalR_Hub.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\appsettings.Development.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\appsettings.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.staticwebassets.runtime.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.exe
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.deps.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.runtimeconfig.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.pdb
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\DrawLib.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\DrawLib.pdb
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.csproj.AssemblyReference.cache
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.GeneratedMSBuildEditorConfig.editorconfig
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.AssemblyInfoInputs.cache
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.AssemblyInfo.cs
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.csproj.CoreCompileInputs.cache
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.MvcApplicationPartsAssemblyInfo.cache
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets\msbuild.Draw_SignalR_Hub.Microsoft.AspNetCore.StaticWebAssets.props
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets\msbuild.build.Draw_SignalR_Hub.props
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Draw_SignalR_Hub.props
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Draw_SignalR_Hub.props
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets.pack.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets.build.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets.development.json
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\scopedcss\bundle\Draw_SignalR_Hub.styles.css
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.csproj.CopyComplete
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\refint\Draw_SignalR_Hub.dll
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.pdb
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.genruntimeconfig.cache
+P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\ref\Draw_SignalR_Hub.dll
