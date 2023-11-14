@@ -16,6 +16,12 @@ namespace Draw_SignalR_Hub
             return s.Id;
         }
 
+        public void RemoveShape(ShapeData shape)
+        {
+            var s = Drawing.Remove(shape);
+            Clients.Others.SendAsync("ShapeRemoved", s);
+        }
+
         public void UpdateShape(ShapeData shape)
         {
             if (Drawing.Update(shape))

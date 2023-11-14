@@ -15,6 +15,12 @@ namespace Draw_SignalR_Hub
             return shape;
         }
 
+        public static ShapeData Remove(ShapeData shape)
+        {
+            Shapes.Remove(shape.Id, out shape);
+            return shape;
+        }
+
         public static bool Update(ShapeData shape)
         {
             if (shape.Id == 0)

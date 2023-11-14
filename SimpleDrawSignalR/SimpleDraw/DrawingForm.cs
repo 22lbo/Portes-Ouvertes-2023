@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.SignalR.Client;
+using Microsoft.AspNetCore.SignalR.Client;
 using Microsoft.AspNet.SignalR.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -47,6 +47,12 @@ namespace SimpleDraw
                     DrawingPanel.Invalidate();
                 });
 
+                connection.On<ShapeData>("ShapeRemoved", (s) =>
+                {
+                    Shapes.Remove(s.Id);
+                    DrawingPanel.Invalidate();
+                });
+
                 connection.On<ShapeData>("ShapeUpdated", (s) =>
                 {
                     if (Shapes.TryGetValue(s.Id, out var shape))
@@ -65,6 +71,7 @@ namespace SimpleDraw
             Tools.Add(RectangleTool);
             Tools.Add(EllipseTool);
             Tools.Add(SelectBtn);
+            Tools.Add(EraserTool);
             SelectTool(LineTool);
 
             RetrieveShapes();
@@ -81,6 +88,11 @@ namespace SimpleDraw
             DrawingPanel.Invalidate();
             DrawingPanel.BackgroundImage = null;
         }
+
+        //Shape RemoveShape(ShapeData s)
+        //{
+            
+        //}
 
         Shape AddShape(ShapeData s)
         {
@@ -156,11 +168,22 @@ namespace SimpleDraw
                             SelectedPoint = 2;
                     }
                     if (SelectedPoint == 0)
-                        SelectedShape = SelectShape(e.X, e.Y);
+                        SelectedShape = SelectShapeModify(e.X, e.Y);
                     prevMouseX = e.X;
                     prevMouseY = e.Y;
                 }
-                else 
+                else if (SelectedTool == EraserTool)
+                {
+                    SelectedShape = SelectShapeRemove(e.X, e.Y);
+                    if (SelectedShape != null)
+                    {
+                        var removedShape = SelectedShape;
+                        connection.InvokeAsync("RemoveShape", removedShape.Data);
+                        Shapes.Remove(removedShape.Id, out removedShape);
+                        DrawingPanel.Invalidate();
+                    }
+                }
+                else
                 {
                     if (SelectedTool == LineTool)
                         SelectedShape = new Line();
@@ -238,13 +261,22 @@ namespace SimpleDraw
             SelectTool(e.ClickedItem);
         }
 
-        private Shape SelectShape(int x, int y)
+        private Shape SelectShapeModify(int x, int y)
         {
             for (int i = Shapes.Count - 1; i >= 0; i--)
-                if (Shapes[i].IsHit(x, y))
-                    return Shapes[i];
-                else
-                    break;
+            {
+                var item = Shapes.Values.ElementAt(i);
+                if (item.IsHit(x, y))
+                    return item;
+            }
+            return null;
+        }
+
+        private Shape SelectShapeRemove(int x, int y)
+        {
+            foreach (var s in Shapes.Values)
+                if (s.IsHit(x, y))
+                    return s;
             return null;
         }
 

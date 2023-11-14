@@ -38,6 +38,7 @@
             EllipseTool = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             FgColorButton = new ToolStripColorButton();
+            EraserTool = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)DrawingPanel).BeginInit();
             ToolStripContainer.ContentPanel.SuspendLayout();
             ToolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -80,10 +81,10 @@
             // DrawingToolStrip
             // 
             DrawingToolStrip.Dock = DockStyle.None;
-            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, LineTool, RectangleTool, EllipseTool, toolStripSeparator1, FgColorButton });
+            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, LineTool, RectangleTool, EllipseTool, toolStripSeparator1, FgColorButton, EraserTool });
             DrawingToolStrip.Location = new Point(3, 0);
             DrawingToolStrip.Name = "DrawingToolStrip";
-            DrawingToolStrip.Size = new Size(164, 25);
+            DrawingToolStrip.Size = new Size(187, 25);
             DrawingToolStrip.TabIndex = 0;
             DrawingToolStrip.Text = "Drawing Tools";
             DrawingToolStrip.ItemClicked += DrawingToolStrip_ItemClicked;
@@ -144,6 +145,16 @@
             FgColorButton.Size = new Size(23, 22);
             FgColorButton.Text = "toolStripColorButton1";
             // 
+            // EraserTool
+            // 
+            EraserTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            EraserTool.Image = (Image)resources.GetObject("EraserTool.Image");
+            EraserTool.ImageTransparentColor = Color.Magenta;
+            EraserTool.Name = "EraserTool";
+            EraserTool.Size = new Size(23, 22);
+            EraserTool.Text = "Eraser";
+            EraserTool.ToolTipText = "Eraser Tool";
+            // 
             // DrawingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -173,5 +184,6 @@
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripColorButton FgColorButton;
         private ToolStripButton SelectBtn;
+        private ToolStripButton EraserTool;
     }
 }
