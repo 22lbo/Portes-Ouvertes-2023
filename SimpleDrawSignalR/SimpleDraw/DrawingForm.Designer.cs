@@ -98,6 +98,7 @@
             SelectBtn.Size = new Size(23, 22);
             SelectBtn.Text = "Pointer";
             SelectBtn.ToolTipText = "SelectBtn";
+            SelectBtn.Click += SelectBtn_Click;
             // 
             // LineTool
             // 
@@ -108,6 +109,7 @@
             LineTool.Size = new Size(23, 22);
             LineTool.Text = "Line";
             LineTool.ToolTipText = "Line Tool";
+            LineTool.Click += LineTool_Click;
             // 
             // RectangleTool
             // 
@@ -118,6 +120,7 @@
             RectangleTool.Size = new Size(23, 22);
             RectangleTool.Text = "Rectangle";
             RectangleTool.ToolTipText = "Rectangle Tool";
+            RectangleTool.Click += RectangleTool_Click;
             // 
             // EllipseTool
             // 
@@ -128,6 +131,7 @@
             EllipseTool.Size = new Size(23, 22);
             EllipseTool.Text = "Ellipse";
             EllipseTool.ToolTipText = "Ellipse Tool";
+            EllipseTool.Click += EllipseTool_Click;
             // 
             // toolStripSeparator1
             // 
@@ -154,6 +158,7 @@
             EraserTool.Size = new Size(23, 22);
             EraserTool.Text = "Eraser";
             EraserTool.ToolTipText = "Eraser Tool";
+            EraserTool.Click += EraserTool_Click;
             // 
             // DrawingForm
             // 

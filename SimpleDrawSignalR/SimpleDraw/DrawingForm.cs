@@ -226,7 +226,7 @@ namespace SimpleDraw
             }
         }
 
-        const int handleSize = 5;
+        const int handleSize = 10;
         private void DrawHandle(Graphics g, int x, int y)
         {
             var hx = x - handleSize / 2;
@@ -275,5 +275,30 @@ namespace SimpleDraw
             return null;
         }
 
+        private void SelectBtn_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Default;
+        }
+
+        private void EraserTool_Click(object sender, EventArgs e)
+        {
+            Cursor erase = new Cursor("../../../Assets/Eraser.cur");
+            Cursor = erase;
+        }
+
+        private void LineTool_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Cross;
+        }
+
+        private void RectangleTool_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Cross;
+        }
+
+        private void EllipseTool_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Cross;
+        }
     }
 }
