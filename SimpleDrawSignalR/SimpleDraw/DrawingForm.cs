@@ -70,11 +70,14 @@ namespace SimpleDraw
 
         async void RetrieveShapes()
         {
+            DrawingPanel.BackgroundImage = Image.FromFile("../../../Assets/loading.gif");
+            DrawingPanel.BackgroundImageLayout = ImageLayout.Center;
             await connection.StartAsync();
             var shapes = await connection.InvokeAsync<IEnumerable<ShapeData>>("RetrieveShapes");
             foreach (var s in shapes)
                 AddShape(s);
             DrawingPanel.Invalidate();
+           DrawingPanel.BackgroundImage = null;
         }
 
         Shape AddShape(ShapeData s)
