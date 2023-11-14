@@ -32,6 +32,7 @@
             DrawingPanel = new PictureBox();
             ToolStripContainer = new ToolStripContainer();
             DrawingToolStrip = new ToolStrip();
+            SelectBtn = new ToolStripButton();
             LineTool = new ToolStripButton();
             RectangleTool = new ToolStripButton();
             EllipseTool = new ToolStripButton();
@@ -79,13 +80,23 @@
             // DrawingToolStrip
             // 
             DrawingToolStrip.Dock = DockStyle.None;
-            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { LineTool, RectangleTool, EllipseTool, toolStripSeparator1, FgColorButton });
+            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, LineTool, RectangleTool, EllipseTool, toolStripSeparator1, FgColorButton });
             DrawingToolStrip.Location = new Point(3, 0);
             DrawingToolStrip.Name = "DrawingToolStrip";
-            DrawingToolStrip.Size = new Size(110, 25);
+            DrawingToolStrip.Size = new Size(164, 25);
             DrawingToolStrip.TabIndex = 0;
             DrawingToolStrip.Text = "Drawing Tools";
             DrawingToolStrip.ItemClicked += DrawingToolStrip_ItemClicked;
+            // 
+            // SelectBtn
+            // 
+            SelectBtn.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            SelectBtn.Image = (Image)resources.GetObject("SelectBtn.Image");
+            SelectBtn.ImageTransparentColor = Color.Magenta;
+            SelectBtn.Name = "SelectBtn";
+            SelectBtn.Size = new Size(23, 22);
+            SelectBtn.Text = "Pointer";
+            SelectBtn.ToolTipText = "SelectBtn";
             // 
             // LineTool
             // 
@@ -161,5 +172,6 @@
         private ToolStripButton EllipseTool;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripColorButton FgColorButton;
+        private ToolStripButton SelectBtn;
     }
 }

@@ -13,6 +13,8 @@ namespace SimpleDraw
 
         public Shape() { LineColor = Color.Black;  }
 
+        public const int minSelectDist = 3;
+
         public int Id { get => Data.Id; set => Data.Id = value; }
         public int X1 { get => Data.X1; set => Data.X1 = value; }
         public int Y1 { get => Data.Y1; set => Data.Y1 = value; }
@@ -20,6 +22,23 @@ namespace SimpleDraw
         public int Y2 { get => Data.Y2; set => Data.Y2 = value; }
         public Color LineColor { get => Color.FromArgb(Data.LineColor); set => Data.LineColor = value.ToArgb(); }
         public Pen Pen => new(LineColor);
+
+        public int X { get => Math.Min(X1, X2); } // Position du côté gauche
+        public int Y { get => Math.Min(Y1, Y2); } // Position du haut
+        public int Width { get => Math.Abs(X2 - X1); } // Largeur
+        public int Height { get => Math.Abs(Y2 - Y1); }
+
+        public int SelectionDistance => Math.Max((int)(Pen.Width + 1) / 2, minSelectDist);
+
+        public virtual bool IsHit(int x, int y)
+        {
+            int rx = X - SelectionDistance;
+            int ry = Y - SelectionDistance;
+            int rwith = Width + 2 * SelectionDistance;
+            int rheight = Height + 2 * SelectionDistance;
+            var rect = new System.Drawing.Rectangle(rx, ry, rwith, rheight);
+            return rect.Contains(x, y);
+        }
 
         public abstract void Draw(Graphics g);
 

@@ -11,6 +11,5 @@
         public int Y2 { get; set; }
         public int LineColor { get; set; }
 
-
     }
 }
