@@ -89,11 +89,6 @@ namespace SimpleDraw
             DrawingPanel.BackgroundImage = null;
         }
 
-        //Shape RemoveShape(ShapeData s)
-        //{
-            
-        //}
-
         Shape AddShape(ShapeData s)
         {
             Shape shape = null;

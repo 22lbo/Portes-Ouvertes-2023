@@ -23,9 +23,9 @@ namespace SimpleDraw
         public Color LineColor { get => Color.FromArgb(Data.LineColor); set => Data.LineColor = value.ToArgb(); }
         public Pen Pen => new(LineColor);
 
-        public int X { get => Math.Min(X1, X2); } // Position du côté gauche
-        public int Y { get => Math.Min(Y1, Y2); } // Position du haut
-        public int Width { get => Math.Abs(X2 - X1); } // Largeur
+        public int X { get => Math.Min(X1, X2); }
+        public int Y { get => Math.Min(Y1, Y2); }
+        public int Width { get => Math.Abs(X2 - X1); }
         public int Height { get => Math.Abs(Y2 - Y1); }
 
         public int SelectionDistance => Math.Max((int)(Pen.Width + 1) / 2, minSelectDist);
