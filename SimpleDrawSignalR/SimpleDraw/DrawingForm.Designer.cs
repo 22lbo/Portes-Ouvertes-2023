@@ -36,6 +36,7 @@
             LineTool = new ToolStripButton();
             RectangleTool = new ToolStripButton();
             EllipseTool = new ToolStripButton();
+            TriangleTool = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             FgColorButton = new ToolStripColorButton();
             EraserTool = new ToolStripButton();
@@ -81,10 +82,10 @@
             // DrawingToolStrip
             // 
             DrawingToolStrip.Dock = DockStyle.None;
-            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, LineTool, RectangleTool, EllipseTool, toolStripSeparator1, FgColorButton, EraserTool });
+            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, LineTool, RectangleTool, EllipseTool, TriangleTool, toolStripSeparator1, FgColorButton, EraserTool });
             DrawingToolStrip.Location = new Point(3, 0);
             DrawingToolStrip.Name = "DrawingToolStrip";
-            DrawingToolStrip.Size = new Size(187, 25);
+            DrawingToolStrip.Size = new Size(210, 25);
             DrawingToolStrip.TabIndex = 0;
             DrawingToolStrip.Text = "Drawing Tools";
             DrawingToolStrip.ItemClicked += DrawingToolStrip_ItemClicked;
@@ -132,6 +133,17 @@
             EllipseTool.Text = "Ellipse";
             EllipseTool.ToolTipText = "Ellipse Tool";
             EllipseTool.Click += EllipseTool_Click;
+            // 
+            // TriangleTool
+            // 
+            TriangleTool.BackColor = Color.Transparent;
+            TriangleTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            TriangleTool.Image = (Image)resources.GetObject("TriangleTool.Image");
+            TriangleTool.ImageTransparentColor = Color.Magenta;
+            TriangleTool.Name = "TriangleTool";
+            TriangleTool.Size = new Size(23, 22);
+            TriangleTool.Text = "Triangle";
+            TriangleTool.ToolTipText = "Triangle Tool";
             // 
             // toolStripSeparator1
             // 
@@ -190,5 +202,6 @@
         private ToolStripColorButton FgColorButton;
         private ToolStripButton SelectBtn;
         private ToolStripButton EraserTool;
+        private ToolStripButton TriangleTool;
     }
 }

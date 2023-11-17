@@ -70,6 +70,7 @@ namespace SimpleDraw
             Tools.Add(LineTool);
             Tools.Add(RectangleTool);
             Tools.Add(EllipseTool);
+            Tools.Add(TriangleTool);
             Tools.Add(SelectBtn);
             Tools.Add(EraserTool);
             SelectTool(LineTool);
@@ -95,7 +96,10 @@ namespace SimpleDraw
             switch (s.Type)
             {
                 case ShapeData.Types.Line:
-                    shape = new Line();
+                    if (SelectedTool == LineTool)
+                        shape = new Line();
+                    else if (SelectedTool == TriangleTool)
+                        shape = new Triangle();
                     break;
                 case ShapeData.Types.Rectangle:
                     shape = new Rectangle();
@@ -186,6 +190,8 @@ namespace SimpleDraw
                         SelectedShape = new Rectangle();
                     else if (SelectedTool == EllipseTool)
                         SelectedShape = new Ellipse();
+                    else if (SelectedTool == TriangleTool)
+                        SelectedShape = new Triangle();
 
                     SelectedShape.X1 = SelectedShape.X2 = e.X;
                     SelectedShape.Y1 = SelectedShape.Y2 = e.Y;
