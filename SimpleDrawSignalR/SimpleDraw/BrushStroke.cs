@@ -12,7 +12,7 @@ namespace SimpleDraw
 
         public override void Draw(Graphics g)
         {
-            g.FillEllipse(Pen.Brush, X1, Y1, 10, 10);
+            g.FillEllipse(Pen.Brush, X1, Y1, SZ, SZ);
         }
     }
 }

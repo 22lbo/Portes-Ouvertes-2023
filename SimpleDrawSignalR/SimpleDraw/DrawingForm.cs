@@ -227,6 +227,7 @@ namespace SimpleDraw
                             SelectedShape = new BrushStroke();
                             SelectedShape.X1 = e.X;
                             SelectedShape.Y1 = e.Y;
+                            SelectedShape.SZ = Convert.ToInt32(SizeUpDown.Value);
                             var addedShape = SelectedShape;
                             var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
                             addedShape.Id = id;

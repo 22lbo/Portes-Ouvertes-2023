@@ -31,6 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrawingForm));
             DrawingPanel = new PictureBox();
             ToolStripContainer = new ToolStripContainer();
+            label1 = new Label();
+            SizeUpDown = new NumericUpDown();
             ClearButton = new Button();
             DrawingToolStrip = new ToolStrip();
             SelectBtn = new ToolStripButton();
@@ -46,6 +48,7 @@
             ToolStripContainer.ContentPanel.SuspendLayout();
             ToolStripContainer.TopToolStripPanel.SuspendLayout();
             ToolStripContainer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)SizeUpDown).BeginInit();
             DrawingToolStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,6 +71,8 @@
             // ToolStripContainer.ContentPanel
             // 
             ToolStripContainer.ContentPanel.AutoScroll = true;
+            ToolStripContainer.ContentPanel.Controls.Add(label1);
+            ToolStripContainer.ContentPanel.Controls.Add(SizeUpDown);
             ToolStripContainer.ContentPanel.Controls.Add(ClearButton);
             ToolStripContainer.ContentPanel.Controls.Add(DrawingPanel);
             ToolStripContainer.ContentPanel.Size = new Size(800, 425);
@@ -81,6 +86,23 @@
             // ToolStripContainer.TopToolStripPanel
             // 
             ToolStripContainer.TopToolStripPanel.Controls.Add(DrawingToolStrip);
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(0, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(118, 15);
+            label1.TabIndex = 4;
+            label1.Text = "Epaisseur du pinceau";
+            // 
+            // SizeUpDown
+            // 
+            SizeUpDown.Location = new Point(124, 0);
+            SizeUpDown.Name = "SizeUpDown";
+            SizeUpDown.Size = new Size(41, 23);
+            SizeUpDown.TabIndex = 3;
+            SizeUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // ClearButton
             // 
@@ -206,10 +228,12 @@
             Text = "Simple Draw";
             ((System.ComponentModel.ISupportInitialize)DrawingPanel).EndInit();
             ToolStripContainer.ContentPanel.ResumeLayout(false);
+            ToolStripContainer.ContentPanel.PerformLayout();
             ToolStripContainer.TopToolStripPanel.ResumeLayout(false);
             ToolStripContainer.TopToolStripPanel.PerformLayout();
             ToolStripContainer.ResumeLayout(false);
             ToolStripContainer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)SizeUpDown).EndInit();
             DrawingToolStrip.ResumeLayout(false);
             DrawingToolStrip.PerformLayout();
             ResumeLayout(false);
@@ -229,5 +253,7 @@
         private ToolStripButton TriangleTool;
         private ToolStripButton BrushTool;
         private Button ClearButton;
+        private Label label1;
+        private NumericUpDown SizeUpDown;
     }
 }
