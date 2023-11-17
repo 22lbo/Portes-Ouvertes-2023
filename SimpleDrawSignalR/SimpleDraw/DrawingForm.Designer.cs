@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrawingForm));
             DrawingPanel = new PictureBox();
             ToolStripContainer = new ToolStripContainer();
+            ClearButton = new Button();
             DrawingToolStrip = new ToolStrip();
             SelectBtn = new ToolStripButton();
             BrushTool = new ToolStripButton();
@@ -41,7 +42,6 @@
             toolStripSeparator1 = new ToolStripSeparator();
             FgColorButton = new ToolStripColorButton();
             EraserTool = new ToolStripButton();
-            ClearButton = new Button();
             ((System.ComponentModel.ISupportInitialize)DrawingPanel).BeginInit();
             ToolStripContainer.ContentPanel.SuspendLayout();
             ToolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -81,6 +81,16 @@
             // ToolStripContainer.TopToolStripPanel
             // 
             ToolStripContainer.TopToolStripPanel.Controls.Add(DrawingToolStrip);
+            // 
+            // ClearButton
+            // 
+            ClearButton.Location = new Point(725, 0);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(75, 23);
+            ClearButton.TabIndex = 3;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
             // 
             // DrawingToolStrip
             // 
@@ -185,16 +195,6 @@
             EraserTool.Text = "Eraser";
             EraserTool.ToolTipText = "Eraser Tool";
             EraserTool.Click += EraserTool_Click;
-            // 
-            // ClearButton
-            // 
-            ClearButton.Location = new Point(725, 0);
-            ClearButton.Name = "ClearButton";
-            ClearButton.Size = new Size(75, 23);
-            ClearButton.TabIndex = 3;
-            ClearButton.Text = "Clear";
-            ClearButton.UseVisualStyleBackColor = true;
-            ClearButton.Click += ClearButton_Click;
             // 
             // DrawingForm
             // 

@@ -227,10 +227,10 @@ namespace SimpleDraw
                             SelectedShape = new BrushStroke();
                             SelectedShape.X1 = e.X;
                             SelectedShape.Y1 = e.Y;
-                            //var addedShape = SelectedShape;
-                            //var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
-                            //addedShape.Id = id;
-                            //Shapes.Add(id, addedShape);
+                            var addedShape = SelectedShape;
+                            var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
+                            addedShape.Id = id;
+                            Shapes.Add(id, addedShape);
                         }
                         else
                         {
@@ -245,7 +245,7 @@ namespace SimpleDraw
             }
         }
 
-        const int handleSize = 10;
+        const int handleSize = 8;
         private void DrawHandle(Graphics g, int x, int y)
         {
             var hx = x - handleSize / 2;
@@ -294,6 +294,16 @@ namespace SimpleDraw
             return null;
         }
 
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            foreach (var s in Shapes.Values)
+            {
+                Shapes.Remove(s.Id);
+                connection.InvokeAsync("RemoveShape", s.Data);
+            }
+            DrawingPanel.Invalidate();
+        }
+
         private void SelectBtn_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.Default;
@@ -323,13 +333,6 @@ namespace SimpleDraw
         private void BrushTool_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.Cross;
-        }
-
-        private void ClearButton_Click(object sender, EventArgs e)
-        {
-            foreach (var s in Shapes.Values)
-                Shapes.Remove(s.Id);
-            DrawingPanel.Invalidate();
         }
     }
 }
