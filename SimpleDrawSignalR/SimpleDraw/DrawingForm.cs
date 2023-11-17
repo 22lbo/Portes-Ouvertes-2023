@@ -71,6 +71,7 @@ namespace SimpleDraw
             Tools.Add(RectangleTool);
             Tools.Add(EllipseTool);
             Tools.Add(TriangleTool);
+            Tools.Add(BrushTool);
             Tools.Add(SelectBtn);
             Tools.Add(EraserTool);
             SelectTool(LineTool);
@@ -192,6 +193,8 @@ namespace SimpleDraw
                         SelectedShape = new Ellipse();
                     else if (SelectedTool == TriangleTool)
                         SelectedShape = new Triangle();
+                    else if (SelectedTool == BrushTool)
+                        SelectedShape = new BrushStroke();
 
                     SelectedShape.X1 = SelectedShape.X2 = e.X;
                     SelectedShape.Y1 = SelectedShape.Y2 = e.Y;
@@ -205,7 +208,7 @@ namespace SimpleDraw
             }
         }
 
-        private void DrawingPanel_MouseMove(object sender, MouseEventArgs e)
+        private async void DrawingPanel_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
@@ -218,6 +221,16 @@ namespace SimpleDraw
                             MoveShape(e.X - prevMouseX, e.Y - prevMouseY, SelectedPoint);
                             prevMouseX = e.X;
                             prevMouseY = e.Y;
+                        }
+                        else if (SelectedTool == BrushTool)
+                        {
+                            SelectedShape = new BrushStroke();
+                            SelectedShape.X1 = e.X;
+                            SelectedShape.Y1 = e.Y;
+                            //var addedShape = SelectedShape;
+                            //var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
+                            //addedShape.Id = id;
+                            //Shapes.Add(id, addedShape);
                         }
                         else
                         {
@@ -250,7 +263,7 @@ namespace SimpleDraw
             if (SelectedShape != null && SelectedShape.Id == 0)
                 SelectedShape.Draw(e.Graphics);
 
-            if (SelectedShape != null)
+            if (SelectedShape != null && SelectedTool != BrushTool)
             {
                 DrawHandle(e.Graphics, SelectedShape.X1, SelectedShape.Y1);
                 DrawHandle(e.Graphics, SelectedShape.X2, SelectedShape.Y2);
@@ -305,6 +318,18 @@ namespace SimpleDraw
         private void EllipseTool_Click(object sender, EventArgs e)
         {
             Cursor = Cursors.Cross;
+        }
+
+        private void BrushTool_Click(object sender, EventArgs e)
+        {
+            Cursor = Cursors.Cross;
+        }
+
+        private void ClearButton_Click(object sender, EventArgs e)
+        {
+            foreach (var s in Shapes.Values)
+                Shapes.Remove(s.Id);
+            DrawingPanel.Invalidate();
         }
     }
 }

@@ -33,6 +33,7 @@
             ToolStripContainer = new ToolStripContainer();
             DrawingToolStrip = new ToolStrip();
             SelectBtn = new ToolStripButton();
+            BrushTool = new ToolStripButton();
             LineTool = new ToolStripButton();
             RectangleTool = new ToolStripButton();
             EllipseTool = new ToolStripButton();
@@ -40,6 +41,7 @@
             toolStripSeparator1 = new ToolStripSeparator();
             FgColorButton = new ToolStripColorButton();
             EraserTool = new ToolStripButton();
+            ClearButton = new Button();
             ((System.ComponentModel.ISupportInitialize)DrawingPanel).BeginInit();
             ToolStripContainer.ContentPanel.SuspendLayout();
             ToolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -66,6 +68,7 @@
             // ToolStripContainer.ContentPanel
             // 
             ToolStripContainer.ContentPanel.AutoScroll = true;
+            ToolStripContainer.ContentPanel.Controls.Add(ClearButton);
             ToolStripContainer.ContentPanel.Controls.Add(DrawingPanel);
             ToolStripContainer.ContentPanel.Size = new Size(800, 425);
             ToolStripContainer.Dock = DockStyle.Fill;
@@ -82,10 +85,10 @@
             // DrawingToolStrip
             // 
             DrawingToolStrip.Dock = DockStyle.None;
-            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, LineTool, RectangleTool, EllipseTool, TriangleTool, toolStripSeparator1, FgColorButton, EraserTool });
+            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, BrushTool, LineTool, RectangleTool, EllipseTool, TriangleTool, toolStripSeparator1, FgColorButton, EraserTool });
             DrawingToolStrip.Location = new Point(3, 0);
             DrawingToolStrip.Name = "DrawingToolStrip";
-            DrawingToolStrip.Size = new Size(210, 25);
+            DrawingToolStrip.Size = new Size(202, 25);
             DrawingToolStrip.TabIndex = 0;
             DrawingToolStrip.Text = "Drawing Tools";
             DrawingToolStrip.ItemClicked += DrawingToolStrip_ItemClicked;
@@ -100,6 +103,17 @@
             SelectBtn.Text = "Pointer";
             SelectBtn.ToolTipText = "SelectBtn";
             SelectBtn.Click += SelectBtn_Click;
+            // 
+            // BrushTool
+            // 
+            BrushTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            BrushTool.Image = (Image)resources.GetObject("BrushTool.Image");
+            BrushTool.ImageTransparentColor = Color.Magenta;
+            BrushTool.Name = "BrushTool";
+            BrushTool.Size = new Size(23, 22);
+            BrushTool.Text = "Brush";
+            BrushTool.ToolTipText = "Brush Tool";
+            BrushTool.Click += BrushTool_Click;
             // 
             // LineTool
             // 
@@ -172,6 +186,16 @@
             EraserTool.ToolTipText = "Eraser Tool";
             EraserTool.Click += EraserTool_Click;
             // 
+            // ClearButton
+            // 
+            ClearButton.Location = new Point(725, 0);
+            ClearButton.Name = "ClearButton";
+            ClearButton.Size = new Size(75, 23);
+            ClearButton.TabIndex = 3;
+            ClearButton.Text = "Clear";
+            ClearButton.UseVisualStyleBackColor = true;
+            ClearButton.Click += ClearButton_Click;
+            // 
             // DrawingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -203,5 +227,7 @@
         private ToolStripButton SelectBtn;
         private ToolStripButton EraserTool;
         private ToolStripButton TriangleTool;
+        private ToolStripButton BrushTool;
+        private Button ClearButton;
     }
 }
