@@ -21,6 +21,8 @@ namespace SimpleDraw
     {
         HubConnection connection;
 
+        Mutex mutex = new Mutex();
+
         Dictionary<int, Shape> Shapes = new();
         Shape SelectedShape;
 
@@ -49,17 +51,21 @@ namespace SimpleDraw
 
                 connection.On<ShapeData>("ShapeRemoved", (s) =>
                 {
+                    mutex.WaitOne();
                     Shapes.Remove(s.Id);
+                    mutex.ReleaseMutex();
                     DrawingPanel.Invalidate();
                 });
 
                 connection.On<ShapeData>("ShapeUpdated", (s) =>
                 {
+                    mutex.WaitOne();
                     if (Shapes.TryGetValue(s.Id, out var shape))
                     {
                         shape.Data = s;
                         DrawingPanel.Invalidate();
                     }
+                    mutex.ReleaseMutex();
                 });
             }
             else
@@ -85,8 +91,10 @@ namespace SimpleDraw
             DrawingPanel.BackgroundImageLayout = ImageLayout.Center;
             await connection.StartAsync();
             var shapes = await connection.InvokeAsync<IEnumerable<ShapeData>>("RetrieveShapes");
+            mutex.WaitOne();
             foreach (var s in shapes)
                 AddShape(s);
+            mutex.ReleaseMutex();
             DrawingPanel.Invalidate();
             DrawingPanel.BackgroundImage = null;
         }
@@ -97,10 +105,7 @@ namespace SimpleDraw
             switch (s.Type)
             {
                 case ShapeData.Types.Line:
-                    if (SelectedTool == LineTool)
-                        shape = new Line();
-                    else if (SelectedTool == TriangleTool)
-                        shape = new Triangle();
+                    shape = new Line();
                     break;
                 case ShapeData.Types.Rectangle:
                     shape = new Rectangle();
@@ -108,11 +113,19 @@ namespace SimpleDraw
                 case ShapeData.Types.Ellipse:
                     shape = new Ellipse();
                     break;
+                case ShapeData.Types.Triangle:
+                    shape = new Triangle();
+                    break;
+                case ShapeData.Types.BrushStroke:
+                    shape = new BrushStroke();
+                    break;
                 default:
                     return null;
             }
             shape.Data = s;
+            mutex.WaitOne();
             Shapes[shape.Id] = shape;
+            mutex.ReleaseMutex();
             return shape;
         }
 
@@ -179,7 +192,9 @@ namespace SimpleDraw
                     {
                         var removedShape = SelectedShape;
                         connection.InvokeAsync("RemoveShape", removedShape.Data);
+                        mutex.WaitOne();
                         Shapes.Remove(removedShape.Id, out removedShape);
+                        mutex.ReleaseMutex();
                         DrawingPanel.Invalidate();
                     }
                 }
@@ -199,11 +214,16 @@ namespace SimpleDraw
                     SelectedShape.X1 = SelectedShape.X2 = e.X;
                     SelectedShape.Y1 = SelectedShape.Y2 = e.Y;
                     SelectedShape.LineColor = FgColorButton.SelectedColor;
+                    if (SelectedTool == EllipseTool || SelectedTool == RectangleTool || SelectedTool == TriangleTool)
+                        SelectedShape.FillColor = BucketColorButton.SelectedColor;
                     DrawingPanel.Invalidate();
                     var addedShape = SelectedShape;
                     var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
                     addedShape.Id = id;
+                    mutex.WaitOne();
                     Shapes.Add(id, addedShape);
+                    mutex.ReleaseMutex();
+
                 }
             }
         }
@@ -227,11 +247,14 @@ namespace SimpleDraw
                             SelectedShape = new BrushStroke();
                             SelectedShape.X1 = e.X;
                             SelectedShape.Y1 = e.Y;
+                            SelectedShape.LineColor = FgColorButton.SelectedColor;
                             SelectedShape.SZ = Convert.ToInt32(SizeUpDown.Value);
                             var addedShape = SelectedShape;
                             var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
                             addedShape.Id = id;
+                            mutex.WaitOne();
                             Shapes.Add(id, addedShape);
+                            mutex.ReleaseMutex();
                         }
                         else
                         {
@@ -258,15 +281,24 @@ namespace SimpleDraw
         private void DrawingPanel_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
+            mutex.WaitOne();
             foreach (var s in Shapes)
                 s.Value.Draw(e.Graphics);
+            mutex.ReleaseMutex();
 
             if (SelectedShape != null && SelectedShape.Id == 0)
                 SelectedShape.Draw(e.Graphics);
 
-            if (SelectedShape != null && SelectedTool != BrushTool)
+
+            if (SelectedShape != null && SelectedTool != BrushTool && SelectedTool != EraserTool && SelectedTool != TriangleTool)
             {
                 DrawHandle(e.Graphics, SelectedShape.X1, SelectedShape.Y1);
+                DrawHandle(e.Graphics, SelectedShape.X2, SelectedShape.Y2);
+            }
+            else if (SelectedShape != null && SelectedTool == TriangleTool)
+            {
+                DrawHandle(e.Graphics, SelectedShape.X1, SelectedShape.Y1);
+                DrawHandle(e.Graphics, SelectedShape.X2, SelectedShape.Y2);
                 DrawHandle(e.Graphics, SelectedShape.X2, SelectedShape.Y2);
             }
         }
@@ -278,30 +310,41 @@ namespace SimpleDraw
 
         private Shape SelectShapeModify(int x, int y)
         {
+            Shape item = null;
+            mutex.WaitOne();
             for (int i = Shapes.Count - 1; i >= 0; i--)
             {
-                var item = Shapes.Values.ElementAt(i);
+                item = Shapes.Values.ElementAt(i);
                 if (item.IsHit(x, y))
-                    return item;
+                    break;
             }
-            return null;
+            mutex.ReleaseMutex();
+            return item;
         }
 
         private Shape SelectShapeRemove(int x, int y)
         {
+            Shape shape = null;
+            mutex.WaitOne();
             foreach (var s in Shapes.Values)
                 if (s.IsHit(x, y))
-                    return s;
-            return null;
+                {
+                    shape = s;
+                    break;
+                }
+            mutex.ReleaseMutex();
+            return shape;
         }
 
         private void ClearButton_Click(object sender, EventArgs e)
         {
+            mutex.WaitOne();
             foreach (var s in Shapes.Values)
             {
                 Shapes.Remove(s.Id);
                 connection.InvokeAsync("RemoveShape", s.Data);
             }
+            mutex.ReleaseMutex();
             DrawingPanel.Invalidate();
         }
 

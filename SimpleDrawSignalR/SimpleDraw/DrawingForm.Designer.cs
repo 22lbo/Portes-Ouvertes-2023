@@ -44,6 +44,7 @@
             toolStripSeparator1 = new ToolStripSeparator();
             FgColorButton = new ToolStripColorButton();
             EraserTool = new ToolStripButton();
+            BucketColorButton = new ToolStripColorButton();
             ((System.ComponentModel.ISupportInitialize)DrawingPanel).BeginInit();
             ToolStripContainer.ContentPanel.SuspendLayout();
             ToolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -117,10 +118,10 @@
             // DrawingToolStrip
             // 
             DrawingToolStrip.Dock = DockStyle.None;
-            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, BrushTool, LineTool, RectangleTool, EllipseTool, TriangleTool, toolStripSeparator1, FgColorButton, EraserTool });
+            DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, BrushTool, LineTool, RectangleTool, EllipseTool, TriangleTool, toolStripSeparator1, FgColorButton, BucketColorButton, EraserTool });
             DrawingToolStrip.Location = new Point(3, 0);
             DrawingToolStrip.Name = "DrawingToolStrip";
-            DrawingToolStrip.Size = new Size(202, 25);
+            DrawingToolStrip.Size = new Size(256, 25);
             DrawingToolStrip.TabIndex = 0;
             DrawingToolStrip.Text = "Drawing Tools";
             DrawingToolStrip.ItemClicked += DrawingToolStrip_ItemClicked;
@@ -218,6 +219,17 @@
             EraserTool.ToolTipText = "Eraser Tool";
             EraserTool.Click += EraserTool_Click;
             // 
+            // BucketColorButton
+            // 
+            BucketColorButton.ColorRectangle = new System.Drawing.Rectangle(0, 13, 16, 3);
+            BucketColorButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            BucketColorButton.Image = (Image)resources.GetObject("BucketColorButton.Image");
+            BucketColorButton.ImageTransparentColor = Color.Magenta;
+            BucketColorButton.Name = "BucketColorButton";
+            BucketColorButton.SelectedColor = Color.Empty;
+            BucketColorButton.Size = new Size(23, 22);
+            BucketColorButton.Text = "BucketColorButton";
+            // 
             // DrawingForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -255,5 +267,6 @@
         private Button ClearButton;
         private Label label1;
         private NumericUpDown SizeUpDown;
+        private ToolStripColorButton BucketColorButton;
     }
 }

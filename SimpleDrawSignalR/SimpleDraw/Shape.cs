@@ -11,9 +11,9 @@ namespace SimpleDraw
     {
         public ShapeData Data = new();
 
-        public Shape() { LineColor = Color.Black;  }
+        public Shape() { FillColor = Color.White; LineColor = Color.Black; }
 
-        public const int minSelectDist = 3;
+        public const int minSelectDist = 2;
 
         public int Id { get => Data.Id; set => Data.Id = value; }
         public int X1 { get => Data.X1; set => Data.X1 = value; }
@@ -22,7 +22,9 @@ namespace SimpleDraw
         public int Y2 { get => Data.Y2; set => Data.Y2 = value; }
         public int SZ { get => Data.SZ; set => Data.SZ = value; }
         public Color LineColor { get => Color.FromArgb(Data.LineColor); set => Data.LineColor = value.ToArgb(); }
+        public Color FillColor { get => Color.FromArgb(Data.FillColor); set => Data.FillColor = value.ToArgb(); }
         public Pen Pen => new(LineColor);
+        public Brush Brush => new SolidBrush(FillColor);
 
         public int X { get => Math.Min(X1, X2); }
         public int Y { get => Math.Min(Y1, Y2); }

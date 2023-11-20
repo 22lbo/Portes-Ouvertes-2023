@@ -8,7 +8,7 @@ namespace SimpleDraw
 {
     public class BrushStroke : Shape
     {
-        public BrushStroke() { Data.Type = DrawLib.ShapeData.Types.Ellipse; }
+        public BrushStroke() { Data.Type = DrawLib.ShapeData.Types.BrushStroke; }
 
         public override void Draw(Graphics g)
         {

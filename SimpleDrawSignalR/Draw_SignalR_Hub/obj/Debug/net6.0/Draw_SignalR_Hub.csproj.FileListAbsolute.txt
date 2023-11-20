@@ -58,3 +58,33 @@ P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR
 P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.pdb
 P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.genruntimeconfig.cache
 P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\ref\Draw_SignalR_Hub.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\appsettings.Development.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\appsettings.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.staticwebassets.runtime.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.exe
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.deps.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.runtimeconfig.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\Draw_SignalR_Hub.pdb
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\DrawLib.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\bin\Debug\net6.0\DrawLib.pdb
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.csproj.AssemblyReference.cache
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.GeneratedMSBuildEditorConfig.editorconfig
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.AssemblyInfoInputs.cache
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.AssemblyInfo.cs
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.csproj.CoreCompileInputs.cache
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.MvcApplicationPartsAssemblyInfo.cache
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets\msbuild.Draw_SignalR_Hub.Microsoft.AspNetCore.StaticWebAssets.props
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets\msbuild.build.Draw_SignalR_Hub.props
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.Draw_SignalR_Hub.props
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.Draw_SignalR_Hub.props
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets.pack.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets.build.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\staticwebassets.development.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\scopedcss\bundle\Draw_SignalR_Hub.styles.css
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.csproj.CopyComplete
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\refint\Draw_SignalR_Hub.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.pdb
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\Draw_SignalR_Hub.genruntimeconfig.cache
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\Draw_SignalR_Hub\obj\Debug\net6.0\ref\Draw_SignalR_Hub.dll

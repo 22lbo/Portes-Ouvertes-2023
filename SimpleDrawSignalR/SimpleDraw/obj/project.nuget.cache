@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "MfsD9qqR+RFH5mbZDE4vLgEFwBHuvHOzuNHHq6zB9mSbfbJWsVmRrHcvW3ghs9La4B+yBoYK5Kcj5KZ4Xbg5RQ==",
+  "dgSpecHash": "6OFt3zyvjjAtCMQ44j4TV9uuK1kOseTaPNc+Uf18x5Qskv+Au9zbfldvasJcaNm8CDku0VQl/q8DPDRDPnZfig==",
   "success": true,
-  "projectFilePath": "C:\\Users\\cp-22lbo\\Documents\\PO-2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\SimpleDraw\\SimpleDraw.csproj",
+  "projectFilePath": "R:\\Cours pratiques\\Programation\\C#\\Portes Ouvertes 2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\SimpleDraw\\SimpleDraw.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cp-22lbo\\.nuget\\packages\\jquery\\1.6.4\\jquery.1.6.4.nupkg.sha512",
     "C:\\Users\\cp-22lbo\\.nuget\\packages\\microsoft.aspnet.signalr\\2.4.3\\microsoft.aspnet.signalr.2.4.3.nupkg.sha512",

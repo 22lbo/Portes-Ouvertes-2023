@@ -21,3 +21,15 @@ P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\
 P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\refint\DrawLib.dll
 P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.pdb
 P:\Partages Enseignant-Eleves\RMU\PO\Borter-Paroz\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\ref\DrawLib.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\bin\Debug\net6.0\DrawLib.deps.json
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\bin\Debug\net6.0\DrawLib.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\bin\Debug\net6.0\DrawLib.pdb
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.csproj.AssemblyReference.cache
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.GeneratedMSBuildEditorConfig.editorconfig
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.AssemblyInfoInputs.cache
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.AssemblyInfo.cs
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.csproj.CoreCompileInputs.cache
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\refint\DrawLib.dll
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\DrawLib.pdb
+R:\Cours pratiques\Programation\C#\Portes Ouvertes 2023\Portes-Ouvertes-2023\SimpleDrawSignalR\DrawLib\obj\Debug\net6.0\ref\DrawLib.dll

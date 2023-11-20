@@ -1209,11 +1209,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\cp-22lbo\\Documents\\PO-2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\SimpleDraw\\SimpleDraw.csproj",
+      "projectUniqueName": "R:\\Cours pratiques\\Programation\\C#\\Portes Ouvertes 2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\SimpleDraw\\SimpleDraw.csproj",
       "projectName": "SimpleDraw",
-      "projectPath": "C:\\Users\\cp-22lbo\\Documents\\PO-2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\SimpleDraw\\SimpleDraw.csproj",
+      "projectPath": "R:\\Cours pratiques\\Programation\\C#\\Portes Ouvertes 2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\SimpleDraw\\SimpleDraw.csproj",
       "packagesPath": "C:\\Users\\cp-22lbo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\cp-22lbo\\Documents\\PO-2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\SimpleDraw\\obj\\",
+      "outputPath": "R:\\Cours pratiques\\Programation\\C#\\Portes Ouvertes 2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\SimpleDraw\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1234,8 +1234,8 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "projectReferences": {
-            "C:\\Users\\cp-22lbo\\Documents\\PO-2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\DrawLib\\DrawLib.csproj": {
-              "projectPath": "C:\\Users\\cp-22lbo\\Documents\\PO-2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\DrawLib\\DrawLib.csproj"
+            "R:\\Cours pratiques\\Programation\\C#\\Portes Ouvertes 2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\DrawLib\\DrawLib.csproj": {
+              "projectPath": "R:\\Cours pratiques\\Programation\\C#\\Portes Ouvertes 2023\\Portes-Ouvertes-2023\\SimpleDrawSignalR\\DrawLib\\DrawLib.csproj"
             }
           }
         }
