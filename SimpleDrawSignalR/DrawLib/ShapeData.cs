@@ -9,6 +9,8 @@
         public int Y1 { get; set; }
         public int X2 { get; set; }
         public int Y2 { get; set; }
+        public int X3 { get; set; }
+        public int Y3 { get; set; }
         public int SZ { get; set; }
         public int LineColor { get; set; }
         public int FillColor { get; set; }

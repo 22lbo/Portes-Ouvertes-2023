@@ -20,6 +20,8 @@ namespace SimpleDraw
         public int Y1 { get => Data.Y1; set => Data.Y1 = value; }
         public int X2 { get => Data.X2; set => Data.X2 = value; }
         public int Y2 { get => Data.Y2; set => Data.Y2 = value; }
+        public int X3 { get => Data.X3; set => Data.X3 = value; }
+        public int Y3 { get => Data.Y3; set => Data.Y3 = value; }
         public int SZ { get => Data.SZ; set => Data.SZ = value; }
         public Color LineColor { get => Color.FromArgb(Data.LineColor); set => Data.LineColor = value.ToArgb(); }
         public Color FillColor { get => Color.FromArgb(Data.FillColor); set => Data.FillColor = value.ToArgb(); }

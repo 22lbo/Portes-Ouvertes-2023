@@ -230,42 +230,36 @@ namespace SimpleDraw
 
         private async void DrawingPanel_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            if (SelectedShape != null && e.Button == MouseButtons.Left)
             {
-                if (SelectedShape != null)
+                if (SelectedTool == SelectBtn)
                 {
-                    if (e.Button == MouseButtons.Left)
-                    {
-                        if (SelectedTool == SelectBtn)
-                        {
-                            MoveShape(e.X - prevMouseX, e.Y - prevMouseY, SelectedPoint);
-                            prevMouseX = e.X;
-                            prevMouseY = e.Y;
-                        }
-                        else if (SelectedTool == BrushTool)
-                        {
-                            SelectedShape = new BrushStroke();
-                            SelectedShape.X1 = e.X;
-                            SelectedShape.Y1 = e.Y;
-                            SelectedShape.LineColor = FgColorButton.SelectedColor;
-                            SelectedShape.SZ = Convert.ToInt32(SizeUpDown.Value);
-                            var addedShape = SelectedShape;
-                            var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
-                            addedShape.Id = id;
-                            mutex.WaitOne();
-                            Shapes.Add(id, addedShape);
-                            mutex.ReleaseMutex();
-                        }
-                        else
-                        {
-                            SelectedShape.X2 = e.X;
-                            SelectedShape.Y2 = e.Y;
-                        }
-                        if (SelectedShape.Id > 0)
-                            connection.InvokeAsync<int>("UpdateShape", SelectedShape.Data);
-                        DrawingPanel.Invalidate();
-                    }
+                    MoveShape(e.X - prevMouseX, e.Y - prevMouseY, SelectedPoint);
+                    prevMouseX = e.X;
+                    prevMouseY = e.Y;
                 }
+                else if (SelectedTool == BrushTool)
+                {
+                    SelectedShape = new BrushStroke();
+                    SelectedShape.X1 = e.X;
+                    SelectedShape.Y1 = e.Y;
+                    SelectedShape.LineColor = FgColorButton.SelectedColor;
+                    SelectedShape.SZ = Convert.ToInt32(SizeUpDown.Value);
+                    var addedShape = SelectedShape;
+                    var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
+                    addedShape.Id = id;
+                    mutex.WaitOne();
+                    Shapes.Add(id, addedShape);
+                    mutex.ReleaseMutex();
+                }
+                else
+                {
+                    SelectedShape.X2 = e.X;
+                    SelectedShape.Y2 = e.Y;
+                }
+                if (SelectedShape.Id > 0)
+                    connection.InvokeAsync<int>("UpdateShape", SelectedShape.Data);
+                DrawingPanel.Invalidate();
             }
         }
 
@@ -288,7 +282,6 @@ namespace SimpleDraw
 
             if (SelectedShape != null && SelectedShape.Id == 0)
                 SelectedShape.Draw(e.Graphics);
-
 
             if (SelectedShape != null && SelectedTool != BrushTool && SelectedTool != EraserTool && SelectedTool != TriangleTool)
             {

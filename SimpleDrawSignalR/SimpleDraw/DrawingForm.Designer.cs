@@ -43,8 +43,8 @@
             TriangleTool = new ToolStripButton();
             toolStripSeparator1 = new ToolStripSeparator();
             FgColorButton = new ToolStripColorButton();
-            EraserTool = new ToolStripButton();
             BucketColorButton = new ToolStripColorButton();
+            EraserTool = new ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)DrawingPanel).BeginInit();
             ToolStripContainer.ContentPanel.SuspendLayout();
             ToolStripContainer.TopToolStripPanel.SuspendLayout();
@@ -103,10 +103,11 @@
             SizeUpDown.Name = "SizeUpDown";
             SizeUpDown.Size = new Size(41, 23);
             SizeUpDown.TabIndex = 3;
-            SizeUpDown.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            SizeUpDown.Value = new decimal(new int[] { 8, 0, 0, 0 });
             // 
             // ClearButton
             // 
+            ClearButton.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             ClearButton.Location = new Point(725, 0);
             ClearButton.Name = "ClearButton";
             ClearButton.Size = new Size(75, 23);
@@ -121,7 +122,7 @@
             DrawingToolStrip.Items.AddRange(new ToolStripItem[] { SelectBtn, BrushTool, LineTool, RectangleTool, EllipseTool, TriangleTool, toolStripSeparator1, FgColorButton, BucketColorButton, EraserTool });
             DrawingToolStrip.Location = new Point(3, 0);
             DrawingToolStrip.Name = "DrawingToolStrip";
-            DrawingToolStrip.Size = new Size(256, 25);
+            DrawingToolStrip.Size = new Size(225, 25);
             DrawingToolStrip.TabIndex = 0;
             DrawingToolStrip.Text = "Drawing Tools";
             DrawingToolStrip.ItemClicked += DrawingToolStrip_ItemClicked;
@@ -208,17 +209,6 @@
             FgColorButton.Size = new Size(23, 22);
             FgColorButton.Text = "toolStripColorButton1";
             // 
-            // EraserTool
-            // 
-            EraserTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            EraserTool.Image = (Image)resources.GetObject("EraserTool.Image");
-            EraserTool.ImageTransparentColor = Color.Magenta;
-            EraserTool.Name = "EraserTool";
-            EraserTool.Size = new Size(23, 22);
-            EraserTool.Text = "Eraser";
-            EraserTool.ToolTipText = "Eraser Tool";
-            EraserTool.Click += EraserTool_Click;
-            // 
             // BucketColorButton
             // 
             BucketColorButton.ColorRectangle = new System.Drawing.Rectangle(0, 13, 16, 3);
@@ -229,6 +219,17 @@
             BucketColorButton.SelectedColor = Color.Empty;
             BucketColorButton.Size = new Size(23, 22);
             BucketColorButton.Text = "BucketColorButton";
+            // 
+            // EraserTool
+            // 
+            EraserTool.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            EraserTool.Image = (Image)resources.GetObject("EraserTool.Image");
+            EraserTool.ImageTransparentColor = Color.Magenta;
+            EraserTool.Name = "EraserTool";
+            EraserTool.Size = new Size(23, 22);
+            EraserTool.Text = "Eraser";
+            EraserTool.ToolTipText = "Eraser Tool";
+            EraserTool.Click += EraserTool_Click;
             // 
             // DrawingForm
             // 
