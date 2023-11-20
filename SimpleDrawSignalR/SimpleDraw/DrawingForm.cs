@@ -14,6 +14,7 @@ using System.Windows.Forms;
 using DrawLib;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Drawing.Drawing2D;
+using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 namespace SimpleDraw
 {
@@ -41,8 +42,6 @@ namespace SimpleDraw
 
             if (connection != null)
             {
-                Debug.WriteLine("Connection successful");
-
                 connection.On<ShapeData>("ShapeAdded", (s) =>
                 {
                     AddShape(s);
@@ -68,11 +67,7 @@ namespace SimpleDraw
                     mutex.ReleaseMutex();
                 });
             }
-            else
-                Debug.WriteLine("Connection failed");
 
-
-            // Add tools to list
             Tools.Add(LineTool);
             Tools.Add(RectangleTool);
             Tools.Add(EllipseTool);
@@ -87,8 +82,8 @@ namespace SimpleDraw
 
         async void RetrieveShapes()
         {
-            DrawingPanel.BackgroundImage = Image.FromFile("../../../Assets/loading.gif");
-            DrawingPanel.BackgroundImageLayout = ImageLayout.Center;
+            DrawingPanel.Image = Image.FromFile("../../../Assets/loading.gif");
+            DrawingPanel.SizeMode = PictureBoxSizeMode.CenterImage;
             await connection.StartAsync();
             var shapes = await connection.InvokeAsync<IEnumerable<ShapeData>>("RetrieveShapes");
             mutex.WaitOne();
@@ -96,7 +91,7 @@ namespace SimpleDraw
                 AddShape(s);
             mutex.ReleaseMutex();
             DrawingPanel.Invalidate();
-            DrawingPanel.BackgroundImage = null;
+            DrawingPanel.Image = null;
         }
 
         Shape AddShape(ShapeData s)
@@ -128,7 +123,6 @@ namespace SimpleDraw
             mutex.ReleaseMutex();
             return shape;
         }
-
 
         void SelectTool(ToolStripItem tool)
         {
@@ -163,7 +157,6 @@ namespace SimpleDraw
                 SelectedShape.X2 += x;
                 SelectedShape.Y2 += y;
             }
-
         }
 
         private async void DrawingPanel_MouseDown(object sender, MouseEventArgs e)
@@ -184,19 +177,19 @@ namespace SimpleDraw
                         SelectedShape = SelectShapeModify(e.X, e.Y);
                     prevMouseX = e.X;
                     prevMouseY = e.Y;
-                }
-                else if (SelectedTool == EraserTool)
-                {
-                    SelectedShape = SelectShapeRemove(e.X, e.Y);
-                    if (SelectedShape != null)
-                    {
-                        var removedShape = SelectedShape;
-                        connection.InvokeAsync("RemoveShape", removedShape.Data);
-                        mutex.WaitOne();
-                        Shapes.Remove(removedShape.Id, out removedShape);
-                        mutex.ReleaseMutex();
-                        DrawingPanel.Invalidate();
-                    }
+                    //if (/*Delete KeyDown == true*/)
+                    //{
+                    //    SelectedShape = SelectShapeModify(e.X, e.Y);
+                    //    if (SelectedShape != null)
+                    //    {
+                    //        var removedShape = SelectedShape;
+                    //        connection.InvokeAsync("RemoveShape", removedShape.Data);
+                    //        mutex.WaitOne();
+                    //        Shapes.Remove(removedShape.Id, out removedShape);
+                    //        mutex.ReleaseMutex();
+                    //        DrawingPanel.Invalidate();
+                    //    }
+                    //}
                 }
                 else
                 {
@@ -208,12 +201,15 @@ namespace SimpleDraw
                         SelectedShape = new Ellipse();
                     else if (SelectedTool == TriangleTool)
                         SelectedShape = new Triangle();
-                    else if (SelectedTool == BrushTool)
+                    else if (SelectedTool == BrushTool || SelectedTool == EraserTool)
                         SelectedShape = new BrushStroke();
 
                     SelectedShape.X1 = SelectedShape.X2 = e.X;
                     SelectedShape.Y1 = SelectedShape.Y2 = e.Y;
-                    SelectedShape.LineColor = FgColorButton.SelectedColor;
+                    if (SelectedTool == EraserTool)
+                        SelectedShape.LineColor = Color.White;
+                    else
+                        SelectedShape.LineColor = FgColorButton.SelectedColor;
                     if (SelectedTool == EllipseTool || SelectedTool == RectangleTool || SelectedTool == TriangleTool)
                         SelectedShape.FillColor = BucketColorButton.SelectedColor;
                     DrawingPanel.Invalidate();
@@ -238,12 +234,15 @@ namespace SimpleDraw
                     prevMouseX = e.X;
                     prevMouseY = e.Y;
                 }
-                else if (SelectedTool == BrushTool)
+                else if (SelectedTool == BrushTool || SelectedTool == EraserTool)
                 {
                     SelectedShape = new BrushStroke();
                     SelectedShape.X1 = e.X;
                     SelectedShape.Y1 = e.Y;
-                    SelectedShape.LineColor = FgColorButton.SelectedColor;
+                    if (SelectedTool == EraserTool)
+                        SelectedShape.LineColor = Color.White;
+                    else
+                        SelectedShape.LineColor = FgColorButton.SelectedColor;
                     SelectedShape.SZ = Convert.ToInt32(SizeUpDown.Value);
                     var addedShape = SelectedShape;
                     var id = await connection.InvokeAsync<int>("AddShape", addedShape.Data);
@@ -280,19 +279,16 @@ namespace SimpleDraw
                 s.Value.Draw(e.Graphics);
             mutex.ReleaseMutex();
 
-            if (SelectedShape != null && SelectedShape.Id == 0)
-                SelectedShape.Draw(e.Graphics);
+            if (SelectedShape != null)
+            {
+                if (SelectedShape.Id == 0)
+                    SelectedShape.Draw(e.Graphics);
 
-            if (SelectedShape != null && SelectedTool != BrushTool && SelectedTool != EraserTool && SelectedTool != TriangleTool)
-            {
-                DrawHandle(e.Graphics, SelectedShape.X1, SelectedShape.Y1);
-                DrawHandle(e.Graphics, SelectedShape.X2, SelectedShape.Y2);
-            }
-            else if (SelectedShape != null && SelectedTool == TriangleTool)
-            {
-                DrawHandle(e.Graphics, SelectedShape.X1, SelectedShape.Y1);
-                DrawHandle(e.Graphics, SelectedShape.X2, SelectedShape.Y2);
-                DrawHandle(e.Graphics, SelectedShape.X2, SelectedShape.Y2);
+                if (SelectedTool != BrushTool && SelectedTool != EraserTool && SelectedTool != TriangleTool)
+                {
+                    DrawHandle(e.Graphics, SelectedShape.X1, SelectedShape.Y1);
+                    DrawHandle(e.Graphics, SelectedShape.X2, SelectedShape.Y2);
+                }
             }
         }
 
@@ -315,20 +311,6 @@ namespace SimpleDraw
             return item;
         }
 
-        private Shape SelectShapeRemove(int x, int y)
-        {
-            Shape shape = null;
-            mutex.WaitOne();
-            foreach (var s in Shapes.Values)
-                if (s.IsHit(x, y))
-                {
-                    shape = s;
-                    break;
-                }
-            mutex.ReleaseMutex();
-            return shape;
-        }
-
         private void ClearButton_Click(object sender, EventArgs e)
         {
             mutex.WaitOne();
@@ -338,6 +320,7 @@ namespace SimpleDraw
                 connection.InvokeAsync("RemoveShape", s.Data);
             }
             mutex.ReleaseMutex();
+            Shapes.Clear();
             DrawingPanel.Invalidate();
         }
 
@@ -348,8 +331,7 @@ namespace SimpleDraw
 
         private void EraserTool_Click(object sender, EventArgs e)
         {
-            Cursor erase = new Cursor("../../../Assets/Eraser.cur");
-            Cursor = erase;
+            Cursor = Cursors.Cross;
         }
 
         private void LineTool_Click(object sender, EventArgs e)

@@ -31,8 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DrawingForm));
             DrawingPanel = new PictureBox();
             ToolStripContainer = new ToolStripContainer();
-            label1 = new Label();
             SizeUpDown = new NumericUpDown();
+            label1 = new Label();
             ClearButton = new Button();
             DrawingToolStrip = new ToolStrip();
             SelectBtn = new ToolStripButton();
@@ -72,8 +72,8 @@
             // ToolStripContainer.ContentPanel
             // 
             ToolStripContainer.ContentPanel.AutoScroll = true;
-            ToolStripContainer.ContentPanel.Controls.Add(label1);
             ToolStripContainer.ContentPanel.Controls.Add(SizeUpDown);
+            ToolStripContainer.ContentPanel.Controls.Add(label1);
             ToolStripContainer.ContentPanel.Controls.Add(ClearButton);
             ToolStripContainer.ContentPanel.Controls.Add(DrawingPanel);
             ToolStripContainer.ContentPanel.Size = new Size(800, 425);
@@ -88,6 +88,14 @@
             // 
             ToolStripContainer.TopToolStripPanel.Controls.Add(DrawingToolStrip);
             // 
+            // SizeUpDown
+            // 
+            SizeUpDown.Location = new Point(124, 2);
+            SizeUpDown.Name = "SizeUpDown";
+            SizeUpDown.Size = new Size(36, 23);
+            SizeUpDown.TabIndex = 5;
+            SizeUpDown.Value = new decimal(new int[] { 8, 0, 0, 0 });
+            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -96,14 +104,6 @@
             label1.Size = new Size(118, 15);
             label1.TabIndex = 4;
             label1.Text = "Epaisseur du pinceau";
-            // 
-            // SizeUpDown
-            // 
-            SizeUpDown.Location = new Point(124, 0);
-            SizeUpDown.Name = "SizeUpDown";
-            SizeUpDown.Size = new Size(41, 23);
-            SizeUpDown.TabIndex = 3;
-            SizeUpDown.Value = new decimal(new int[] { 8, 0, 0, 0 });
             // 
             // ClearButton
             // 
@@ -267,7 +267,7 @@
         private ToolStripButton BrushTool;
         private Button ClearButton;
         private Label label1;
-        private NumericUpDown SizeUpDown;
         private ToolStripColorButton BucketColorButton;
+        private NumericUpDown SizeUpDown;
     }
 }
