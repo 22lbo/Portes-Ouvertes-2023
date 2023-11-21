@@ -159,6 +159,34 @@ namespace SimpleDraw
             }
         }
 
+        bool keyPressed = false;
+        bool shapeToRemoveSelected = false;
+        private void DrawingPanel_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+                keyPressed = true;
+
+            if (shapeToRemoveSelected == true)
+            {
+                if (SelectedShape != null)
+                {
+                    var removedShape = SelectedShape;
+                    connection.InvokeAsync("RemoveShape", removedShape.Data);
+                    mutex.WaitOne();
+                    Shapes.Remove(removedShape.Id, out removedShape);
+                    mutex.ReleaseMutex();
+                    DrawingPanel.Invalidate();
+                }
+                keyPressed = false;
+            }
+
+        }
+
+        private void DrawingPanel_MouseEnter(object sender, EventArgs e)
+        {
+            DrawingPanel.Focus();
+        }
+
         private async void DrawingPanel_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -177,19 +205,11 @@ namespace SimpleDraw
                         SelectedShape = SelectShapeModify(e.X, e.Y);
                     prevMouseX = e.X;
                     prevMouseY = e.Y;
-                    //if (/*Delete KeyDown == true*/)
-                    //{
-                    //    SelectedShape = SelectShapeModify(e.X, e.Y);
-                    //    if (SelectedShape != null)
-                    //    {
-                    //        var removedShape = SelectedShape;
-                    //        connection.InvokeAsync("RemoveShape", removedShape.Data);
-                    //        mutex.WaitOne();
-                    //        Shapes.Remove(removedShape.Id, out removedShape);
-                    //        mutex.ReleaseMutex();
-                    //        DrawingPanel.Invalidate();
-                    //    }
-                    //}
+                    if (keyPressed == true)
+                    {
+                        SelectedShape = SelectShapeModify(e.X, e.Y);
+                        shapeToRemoveSelected = true;
+                    }
                 }
                 else
                 {
@@ -219,7 +239,6 @@ namespace SimpleDraw
                     mutex.WaitOne();
                     Shapes.Add(id, addedShape);
                     mutex.ReleaseMutex();
-
                 }
             }
         }

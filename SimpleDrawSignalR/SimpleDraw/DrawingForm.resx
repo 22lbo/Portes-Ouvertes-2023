@@ -133,22 +133,6 @@
         CAkwMAAAoy3lzecNZgkAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="BrushTool.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJiSURBVDhPbZPrS1NxHMbP39C/4IveBEFkEBQs6EKBiPbC
-        gigrbJBamFGL9WZhCSNRugwjJytNM1dp1ATnhVhWDBqueVle9qJmWew+p7soT+f5rp0mdeDhd87hfJ7n
-        +/39vkdxTXzE/PwCZmf9mnzTU5o8k15N7k8eERk+2wdfQSH8vytXpEyREuv5NRgKw9bbB4WJvDK5dVE6
-        nRatqu+SmZym2FoW4VQW8ewG/MFlDI2/lUo0A0KFlFRwEQnXwCYTGhQ0MDyGH5HMZgOCq/GogLH+VllZ
-        bjHM9GHXe3z9/gtzyyto737+14BAqK02n6waJdV3xaXTjLDXvyDplh4nTLfbobCflMOKn8ZyrXd+XJzK
-        d+7pL5jwzohZ54t3uNRkESk+1whCp7Yh8WEo33NqVUumEXd7vK8FDw0ncL/ZIMnXWp+iouY6qvUNUNzm
-        OiSObhEDKVs1KCQTftlyFv2Xd+OZ8QA6zu9E48mDqKo14VD5cRhNTVA8pjNikL1RJjBTI8kVWZ1dNwW2
-        m8rw+Mp+kfn0DoG5gW9GRqF4rc3I6beKMnf1iIZDiKmVcAqfXN0nyQQfNOhENLBZLfAEvuUnkSO5YT4m
-        BmjcJffxGTfYGtMLsKVur8DmczqZA26o/bVDrUA9lnTAKzDboEHgog7RmlKM1e/5B2a60z0pc8BplAq4
-        eZHPEwgYjgjMU1mqKIG7skQ2jvCt+kq03bsj6Sx/aW39j4FvSo5P+laP1HPhMOaqSzFatV3E4yPYM+iQ
-        ZM4NYYqDpdCFJvKrqsPC5+6uR+jotIr4xxFmMgGK33C19fbhN4XKP33eG1BiAAAAAElFTkSuQmCC
-</value>
-  </data>
   <data name="LineTool.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
@@ -192,10 +176,30 @@
   <data name="BucketColorButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACRSURBVDhPY/j27dt/SjDYACcnJ7IwigEf3n8kCZNswPNb
-        J/+f6DYF0yA+yQac6Db5f6hWCmwIiE+mC0wIu2DS2Vf/F1x6DefjwlgNyNr34r/0wkdgTMgQDAOQNRNj
-        CIoBOg0rMTTDMLIhIHbriZeYBmDTiIxBGkEYxge5liQDsGGQqykyAISpZwAlmIEywMAAAAc1/Jwvt6sN
-        AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGdSURBVDhPY8AGgoODTXx8fLJVVVVtoUKkgZCQkHQQLSoq
+        2iwnJ5fGysqqD5YgFgQFBSW7ubmllZeX/3/37t1/oFAGEJuCJQmBsLAwfZDmN2/e/AcZcPz48f/Pnr36
+        z8jI2MbBwWEHVYYdwDS/fPny/+HDh8EGrF69+v+mTdv+nzt3/7+YmFhbTPXN90ktrzqhWhAApvnZs2f/
+        b968+X/mzJn/z5w587+zs/f/3Llr/i9YsOn/7dtv/zsHVK0Or7z/P6TsThRUKwSAND9+/BisGeTsRYsW
+        /Q8NDQUaMA2secuWY/+fPPn638XFJd898/x/t4wzN6FaIQAU2vfv3wdr3rNnD9jZMJtBmh88+ATW7O/v
+        b2Acuvs/CEO1QgA0qtKPHTuOofnu3Xf/7e3tc42NjW1AahWcVvwHYRAbHRgzMTGVr1ixA675xo1X/5WV
+        lXP09PQMoWoY+A2n/xc2nd0A5aICFhYWKzY2trp9+87/v3z56X8eHp5qISEhc6g0GLCq92LXDANAQ+yZ
+        mZm7QBjEhgrTCPynEAy0Af//AwA7G5lEtQ8VCAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="BrushTool.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJiSURBVDhPbZPrS1NxHMbP39C/4IveBEFkEBQs6EKBiPbC
+        gigrbJBamFGL9WZhCSNRugwjJytNM1dp1ATnhVhWDBqueVle9qJmWew+p7soT+f5rp0mdeDhd87hfJ7n
+        +/39vkdxTXzE/PwCZmf9mnzTU5o8k15N7k8eERk+2wdfQSH8vytXpEyREuv5NRgKw9bbB4WJvDK5dVE6
+        nRatqu+SmZym2FoW4VQW8ewG/MFlDI2/lUo0A0KFlFRwEQnXwCYTGhQ0MDyGH5HMZgOCq/GogLH+VllZ
+        bjHM9GHXe3z9/gtzyyto737+14BAqK02n6waJdV3xaXTjLDXvyDplh4nTLfbobCflMOKn8ZyrXd+XJzK
+        d+7pL5jwzohZ54t3uNRkESk+1whCp7Yh8WEo33NqVUumEXd7vK8FDw0ncL/ZIMnXWp+iouY6qvUNUNzm
+        OiSObhEDKVs1KCQTftlyFv2Xd+OZ8QA6zu9E48mDqKo14VD5cRhNTVA8pjNikL1RJjBTI8kVWZ1dNwW2
+        m8rw+Mp+kfn0DoG5gW9GRqF4rc3I6beKMnf1iIZDiKmVcAqfXN0nyQQfNOhENLBZLfAEvuUnkSO5YT4m
+        BmjcJffxGTfYGtMLsKVur8DmczqZA26o/bVDrUA9lnTAKzDboEHgog7RmlKM1e/5B2a60z0pc8BplAq4
+        eZHPEwgYjgjMU1mqKIG7skQ2jvCt+kq03bsj6Sx/aW39j4FvSo5P+laP1HPhMOaqSzFatV3E4yPYM+iQ
+        ZM4NYYqDpdCFJvKrqsPC5+6uR+jotIr4xxFmMgGK33C19fbhN4XKP33eG1BiAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="EraserTool.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
